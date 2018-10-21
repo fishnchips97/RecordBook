@@ -6,11 +6,11 @@ import TabBarIcon from '../components/TabBarIcon';
 import HomeScreen from '../screens/HomeScreen';
 import LinksScreen from '../screens/LinksScreen';
 import SettingsScreen from '../screens/SettingsScreen';
-import ProfileScreen from '../screens/ProfileScreen';
-import ChallengeScreen from '../screens/ChallengeScreen';
 import FeedScreen from '../screens/FeedScreen';
+import ChallengeScreen from '../screens/ChallengeScreen';
 import RecordScreen from '../screens/RecordScreen';
 import LeaderBoardScreen from '../screens/LeaderBoardScreen';
+import ProfileScreen from '../screens/ProfileScreen';
 
 const HomeStack = createStackNavigator({
   Home: HomeScreen,
@@ -58,18 +58,18 @@ SettingsStack.navigationOptions = {
   ),
 };
 
-const ProfileStack = createStackNavigator({
-  Profile: ProfileScreen,
+const FeedStack = createStackNavigator({
+  Feed: FeedScreen,
 });
 
-ProfileStack.navigationOptions = {
-  tabBarLabel: 'Profile',
-  // tabBarIcon: ({ focused }) => (
-  //   <TabBarIcon
-  //     focused={focused}
-  //     name={Platform.OS === 'ios' ? `ios-options${focused ? '' : '-outline'}` : 'md-options'}
-  //   />
-  // ),
+FeedStack.navigationOptions = {
+  tabBarLabel: 'Feed',
+  tabBarIcon: ({ focused }) => (
+      <TabBarIcon
+      focused={focused}
+      name={'md-browsers'}
+    />
+  ),
 };
 
 const ChallengeStack = createStackNavigator({
@@ -78,27 +78,14 @@ const ChallengeStack = createStackNavigator({
 
 ChallengeStack.navigationOptions = {
   tabBarLabel: 'Challenge',
-  // tabBarIcon: ({ focused }) => (
-  //   <TabBarIcon
-  //     focused={focused}
-  //     name={Platform.OS === 'ios' ? `ios-options${focused ? '' : '-outline'}` : 'md-options'}
-  //   />
-  // ),
+  tabBarIcon: ({ focused }) => (
+    <TabBarIcon
+      focused={focused}
+      name={'md-key'}
+    />
+  ),
 };
 
-const FeedStack = createStackNavigator({
-  Feed: FeedScreen,
-});
-
-FeedStack.navigationOptions = {
-  tabBarLabel: 'Feed',
-  // tabBarIcon: ({ focused }) => (
-  //   <TabBarIcon
-  //     focused={focused}
-  //     name={Platform.OS === 'ios' ? `ios-options${focused ? '' : '-outline'}` : 'md-options'}
-  //   />
-  // ),
-};
 
 const RecordStack = createStackNavigator({
   Record: RecordScreen,
@@ -106,12 +93,12 @@ const RecordStack = createStackNavigator({
 
 RecordStack.navigationOptions = {
   tabBarLabel: 'Record',
-  // tabBarIcon: ({ focused }) => (
-  //   <TabBarIcon
-  //     focused={focused}
-  //     name={Platform.OS === 'ios' ? `ios-options${focused ? '' : '-outline'}` : 'md-options'}
-  //   />
-  // ),
+  tabBarIcon: ({ focused }) => (
+    <TabBarIcon
+      focused={focused}
+      name={'md-radio-button-on'}
+    />
+  ),
 };
 
 const LeaderBoardStack = createStackNavigator({
@@ -120,12 +107,26 @@ const LeaderBoardStack = createStackNavigator({
 
 LeaderBoardStack.navigationOptions = {
   tabBarLabel: 'Leader Board',
-  // tabBarIcon: ({ focused }) => (
-  //   <TabBarIcon
-  //     focused={focused}
-  //     name={Platform.OS === 'ios' ? `ios-options${focused ? '' : '-outline'}` : 'md-options'}
-  //   />
-  // ),
+  tabBarIcon: ({ focused }) => (
+    <TabBarIcon
+      focused={focused}
+      name={'md-podium'}
+    />
+  ),
+};
+
+const ProfileStack = createStackNavigator({
+  Profile: ProfileScreen,
+});
+
+ProfileStack.navigationOptions = {
+  tabBarLabel: 'Profile',
+  tabBarIcon: ({ focused }) => (
+    <TabBarIcon
+      focused={focused}
+      name={'md-contact'}
+    />
+  ),
 };
 
 export default createBottomTabNavigator({
@@ -134,7 +135,7 @@ export default createBottomTabNavigator({
   RecordStack,
   LeaderBoardStack,
   ProfileStack,
-  HomeStack,
+  // HomeStack,
   // LinksStack,
   // SettingsStack,
 });
