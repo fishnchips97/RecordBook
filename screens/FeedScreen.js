@@ -1,5 +1,5 @@
 import React from 'react';
-import { ScrollView, StyleSheet, Text, View, FlatList, Image } from 'react-native';
+import { StyleSheet, Text, View, FlatList, Image } from 'react-native';
 
 export default class FeedScreen extends React.Component {
     static navigationOptions = {
@@ -57,4 +57,4 @@ const styles = StyleSheet.create({
         marginBottom: 10,
         flexDirection: 'column',
     }
-});
+})

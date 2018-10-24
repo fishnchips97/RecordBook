@@ -9,7 +9,7 @@ import SettingsScreen from '../screens/SettingsScreen';
 import FeedScreen from '../screens/FeedScreen';
 import ChallengeScreen from '../screens/ChallengeScreen';
 import RecordScreen from '../screens/RecordScreen';
-import LeaderBoardScreen from '../screens/LeaderBoardScreen';
+import LeaderboardScreen from '../screens/LeaderBoardScreen';
 import ProfileScreen from '../screens/ProfileScreen';
 
 const HomeStack = createStackNavigator({
@@ -101,12 +101,12 @@ RecordStack.navigationOptions = {
   ),
 };
 
-const LeaderBoardStack = createStackNavigator({
-  LeaderBoard: LeaderBoardScreen,
+const LeaderboardStack = createStackNavigator({
+  Leaderboard: LeaderboardScreen,
 });
 
-LeaderBoardStack.navigationOptions = {
-  tabBarLabel: 'Leader Board',
+LeaderboardStack.navigationOptions = {
+  tabBarLabel: 'Leaderboard',
   tabBarIcon: ({ focused }) => (
     <TabBarIcon
       focused={focused}
@@ -133,7 +133,7 @@ export default createBottomTabNavigator({
   FeedStack,
   ChallengeStack,
   RecordStack,
-  LeaderBoardStack,
+  LeaderboardStack,
   ProfileStack,
   // HomeStack,
   // LinksStack,

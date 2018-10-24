@@ -1,28 +1,65 @@
 import React from 'react';
-import { ScrollView, StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, FlatList, Image } from 'react-native';
 
-export default class LeaderBoardScreen extends React.Component {
+export default class LeaderboardScreen extends React.Component {
     static navigationOptions = {
-        title: 'LeaderBoard',
+        title: 'Leaderboard',
     };
 
     render() {
         return (
-            <ScrollView style={styles.container}>
-                {/* Go ahead and delete ExpoLinksView and replace it with your
-           * content, we just wanted to provide you with some helpful links */}
-                <View>
-                    <Text>LeaderBoard</Text>
+            <View style={styles.container}>
+                <View style={styles.header}>
+                    <Text style={{fontWeight: "bold", fontSize: 20}}>Mile</Text>
+                    <Text>Men's U.S.</Text>
                 </View>
-            </ScrollView>
+                
+                <FlatList
+                    data={[
+                        { key: '1', name: 'Steve', pace: 5.0 },
+                        { key: '2', name: 'Jon',   pace: 5.5 },
+                        { key: '3', name: 'Ben',   pace: 5.7 },
+                    ]}
+                    renderItem={_renderRunEntry}
+                />
+            </View>
         );
     }
+}
+
+function _renderRunEntry({ item }) {
+    itemWindow =
+        <View style={styles.item}>
+            <View style={{ flexDirection: "row" }}>
+                <View style={{ flexDirection: "row" }}>
+                    <Image source={{ uri: "https://facebook.github.io/react-native/img/favicon.png", width: 40, height: 40 }} />
+                </View>
+                <View>
+                    <Text style={{ paddingLeft: 10 }}>{item.key}. {item.name}</Text>
+                    <Text style={{ paddingLeft: 10, paddingTop: 10 }}>Pace: {item.pace} min/mile</Text>
+                </View>
+            </View>
+
+
+
+        </View>
+
+    return itemWindow;
 }
 
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        paddingTop: 15,
-        backgroundColor: '#fff',
+        backgroundColor: '#eee',
     },
-});
+    item: {
+        padding: 10,
+        backgroundColor: '#fff',
+        marginBottom: 10,
+        flexDirection: 'column',
+    },
+    header: {
+        padding: 10,
+        alignItems: "center"
+    }
+})
