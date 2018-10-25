@@ -11,9 +11,9 @@ export default class FeedScreen extends React.Component {
             <View style={styles.container}>
                 <FlatList
                     data={[
-                        { key: '1', name: 'Steve',  distance: 3.5, pace: 8.0},
-                        { key: '2', name: 'Jon', distance: 2.2, pace: 7.0},
-                        { key: '3', name: 'Ben', distance: 1.1, pace: 6.0},
+                        { key: '1', name: 'Harry K.',  distance: 3.5, pace: 8.0},
+                        { key: '2', name: 'Paul P.', distance: 2.2, pace: 7.0},
+                        { key: '3', name: 'Kevin D.', distance: 1.1, pace: 6.0},
                     ]}
                     renderItem = {_renderRunEntry}
                 />

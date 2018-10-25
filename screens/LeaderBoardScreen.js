@@ -16,9 +16,9 @@ export default class LeaderboardScreen extends React.Component {
                 
                 <FlatList
                     data={[
-                        { key: '1', name: 'Steve', pace: 5.0 },
-                        { key: '2', name: 'Jon',   pace: 5.5 },
-                        { key: '3', name: 'Ben',   pace: 5.7 },
+                        { key: '1', name: 'Harry K.', pace: 5.0 },
+                        { key: '2', name: 'Paul P.',   pace: 5.5 },
+                        { key: '3', name: 'Kevin D.',   pace: 5.7 },
                     ]}
                     renderItem={_renderRunEntry}
                 />
